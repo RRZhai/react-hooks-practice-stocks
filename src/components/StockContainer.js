@@ -1,11 +1,12 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Stock from "./Stock";
 
-function StockContainer() {
+function StockContainer({stocks, handleSelect}) {
+  
   return (
     <div>
       <h2>Stocks</h2>
-      {/* render stock list here*/}
+    {stocks.map(stock => <Stock key={stock.id} handleSelect={handleSelect} stock={stock}/>)}
     </div>
   );
 }
